@@ -32,12 +32,12 @@ Phase 1: Foundation Setup  ──▶  Phase 2: Auth UI  ──▶  Phase 3: Main
 
 ## Phase 2 — Authentication UI & Simulated State
 
-- [ ] Splash Screen UI & session check simulation
-- [ ] Login Screen UI (Email/Username, Password, validation rules)
-- [ ] Login loading state & error banner presentation
-- [ ] `MockAuthRepository` & Auth Riverpod `NotifierProvider`
-- [ ] Login flow simulation & navigation redirect to Dashboard
-- [ ] Logout dialog & session reset simulation
+- [x] Splash Screen UI (`splash_screen.dart` - GTD brand & navigation to `/login`)
+- [x] Login Screen UI (`login_screen.dart` - Username/Password fields, validation rules)
+- [x] Login loading state & error banner presentation (`GtdButton` & `GtdCard` error feedback)
+- [x] `MockAuthRepository` & Auth Riverpod `loginNotifierProvider`
+- [x] Login flow simulation (`/` → `/login`)
+- [ ] Logout dialog & session reset simulation (Deferred to Dashboard / Profile UI phase)
 
 ---
 

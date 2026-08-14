@@ -92,3 +92,10 @@ This file records all key technical decisions made for **GTD Logistics Mobile Ap
 * **Status**: `ACCEPTED`
 * **Decision**: Build all reusable UI widgets in `lib/shared/widgets/` (`GtdButton`, `GtdTextField`, `GtdCard`, `GtdStatusBadge`, `GtdLoading`, `GtdEmptyState`, `GtdErrorState`). Feature screens must reuse these components rather than re-creating one-off button/card implementations.
 * **Rationale**: Guarantees visual consistency, high scannability, central theme enforcement, and rapid UI development. Status badge values are presentation defaults and do not assume backend API contracts.
+
+---
+
+### ADR-014: Authentication UI & Mock Presentation State Machine
+* **Status**: `ACCEPTED`
+* **Decision**: Implement `SplashScreen` and `LoginScreen` reusing shared GTD components (`GtdButton`, `GtdTextField`, `GtdCard`). Login state is driven by Riverpod `LoginNotifier` (`AsyncValue<bool?>`) interacting with `AuthRepository` interface and `MockAuthRepository`. No `isAuthenticated()` method, token persistence, or fake Sanctum response schemas are created until the Laravel API contract is published.
+* **Rationale**: Maintains clean presentation/API boundaries so real authentication can be connected in Phase 4 without modifying UI widgets or screens.
